@@ -2,50 +2,54 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>balance</groupId>
-	<artifactId>bfp</artifactId>
+	<artifactId>balance</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bfp Maven Webapp</name>
-	<!-- <dependencies> <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
-		<version>3.8.1</version> <scope>test</scope> </dependency> </dependencies> -->
+	<name>balance Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<spring.version>4.2.4.RELEASE</spring.version>
+		<jackson.version>2.5.0</jackson.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>4.0.2.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>4.0.2.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>4.0.2.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
-
-
 		<!-- 添加spring-tx包 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
-			<version>4.0.2.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<!-- 添加spring-jdbc包 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>4.0.2.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<!-- 为了方便进行单元测试，添加spring-test包 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>4.0.2.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<!--添加aspectjweaver包 -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -100,8 +104,25 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
-		<finalName>bfp</finalName>
+		<finalName>balance</finalName>
 	</build>
 </project>
