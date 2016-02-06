@@ -1,6 +1,6 @@
 var menu = [ {
 		name : '人员管理',
-		url : 'ry.html',
+		url : '/balance/user/showUserList',
 		isLeaf : true,
 		icon : 'fa-user'
 	}, {
@@ -51,6 +51,25 @@ $(function() {
 		$('#side-menu').append(_li);
 	});
 	$('#side-menu').metisMenu();
+	
+	
+	
+	$("#grid-data").bootgrid({
+	    ajax: true,
+	    post: function ()
+	    {
+	        return {
+	            id: "b0df282a-0d67-40e5-8558-c9e93b7befed"
+	        };
+	    },
+	    url: "/balance/user/showUserList",
+	    formatters: {
+	        "link": function(column, row)
+	        {
+	            return "<a href=\"#\">" + column.id + ": " + row.id + "</a>";
+	        }
+	    }
+	});
 
 });
 
@@ -78,7 +97,7 @@ $(function() {
 						if (height < 1)
 							height = 1;
 						if (height > topOffset) {
-							$("#page-wrapper").css("min-height",
+							$("#page-wrapper1").css("min-height",
 									(height) + "px");
 						}
 					});

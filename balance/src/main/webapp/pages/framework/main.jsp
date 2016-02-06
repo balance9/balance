@@ -22,25 +22,38 @@
 <title>管理平台</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="<%=path %>/resources/framework/bower_components/bootstrap/dist/css/bootstrap.min.css"
+<link
+	href="<%=path%>/resources/framework/bower_components/bootstrap/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 
 <!-- MetisMenu CSS -->
-<link href="<%=path %>/resources/framework/bower_components/metisMenu/dist/metisMenu.min.css"
+<link
+	href="<%=path%>/resources/framework/bower_components/metisMenu/dist/metisMenu.min.css"
 	rel="stylesheet">
 
 <!-- Timeline CSS -->
-<link href="<%=path %>/resources/framework/dist/css/timeline.css" rel="stylesheet">
+<link href="<%=path%>/resources/framework/dist/css/timeline.css"
+	rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="<%=path %>/resources/framework/dist/css/sb-admin-2.css" rel="stylesheet">
+<link href="<%=path%>/resources/framework/dist/css/sb-admin-2.css"
+	rel="stylesheet">
 
 <!-- Morris Charts CSS -->
-<link href="<%=path %>/resources/framework/bower_components/morrisjs/morris.css" rel="stylesheet">
+<link
+	href="<%=path%>/resources/framework/bower_components/morrisjs/morris.css"
+	rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="<%=path %>/resources/framework/bower_components/font-awesome/css/font-awesome.min.css"
+<link
+	href="<%=path%>/resources/framework/bower_components/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
+
+<link
+	href="<%=path%>/resources/common/plugins/jquery.bootgrid/jquery.bootgrid.css"
+	rel="stylesheet" type="text/css">
+
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -108,8 +121,8 @@
 						<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
 						</li>
 						<li class="divider"></li>
-						<li><a href="<%=path%>/login"><i class="fa fa-sign-out fa-fw"></i>
-								Logout</a></li>
+						<li><a href="<%=path%>/login"><i
+								class="fa fa-sign-out fa-fw"></i> Logout</a></li>
 					</ul> <!-- /.dropdown-user --></li>
 				<!-- /.dropdown -->
 			</ul>
@@ -140,25 +153,48 @@
 			<!-- /.navbar-static-side -->
 		</nav>
 		<!-- 内容页 -->
-		<div id="page-wrapper"></div>
+		<div id="page-wrapper">
+			<table id="grid-data"
+				class="table table-condensed table-hover table-striped">
+				<thead>
+					<tr>
+						<th data-column-id="uid">用户ID</th>
+						<th data-column-id="username">用户名</th>
+						<th data-column-id="birthday" data-order="desc">出生日期</th>
+						<th data-column-id="sex" >性别</th>
+						<th data-column-id="tel" >电话</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
 		<!-- /#page-wrapper -->
 
 	</div>
 	<!-- /#wrapper -->
 
 	<!-- jQuery -->
-	<script src="<%=path %>/resources/framework/bower_components/jquery/dist/jquery.min.js"></script>
+	<script
+		src="<%=path%>/resources/framework/bower_components/jquery/dist/jquery.min.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="<%=path %>/resources/framework/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script
+		src="<%=path%>/resources/framework/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 	<!-- Metis Menu Plugin JavaScript -->
-	<script src="<%=path %>/resources/framework/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+	<script
+		src="<%=path%>/resources/framework/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
 	<!-- Morris Charts JavaScript -->
-	<script src="<%=path %>/resources/framework/bower_components/raphael/raphael-min.js"></script>
+	<script
+		src="<%=path%>/resources/framework/bower_components/raphael/raphael-min.js"></script>
+		
+	<%-- <script
+		src="<%=path%>/resources/common/plugins/jquery.bootgrid/jquery.bootgrid.fa.js"></script> --%>
+		
+	<script
+		src="<%=path%>/resources/common/plugins/jquery.bootgrid/jquery.bootgrid.js"></script>
 	<!-- Custom Theme JavaScript -->
-	<script src="<%=path %>/resources/framework/dist/js/sb-admin-2.js"></script>
+	<script src="<%=path%>/resources/framework/dist/js/sb-admin-2.js"></script>
 
 </body>
 

@@ -1,7 +1,6 @@
 package com.balance.study.servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,31 +11,30 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import com.balance.study.domain.User;
 import com.balance.study.service.IHello;
-import com.balance.study.service.UserService;
 
 @WebServlet(name = "HelloServlet", urlPatterns = { "/hello" })
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 2801654413247618244L;
 	private IHello hello;
-	private UserService userService = null;
+
+	// private TestService userService = null;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
-		// ·½·¨1,Ê¹ÓÃ´«Í³·½Ê½È¥¼ÓÔØbeans.xml,Ã¿´ÎÇëÇóÊ±¼ÓÔØ
+		// ï¿½ï¿½ï¿½ï¿½1,Ê¹ï¿½Ã´ï¿½Í³ï¿½ï¿½Ê½È¥ï¿½ï¿½ï¿½ï¿½beans.xml,Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 		// ApplicationContext applicationContext = new
 		// ClassPathXmlApplicationContext("beans.xml");
 
-		// ·½·¨2,Ê¹ÓÃ¼àÌýÆ÷µÄ·½Ê½¼ÓÔØbeans.xml,ÔÚÒ»Æô¶¯µÄÊ±ºò¾Í¼ÓÔØ¼àÌýÆ÷,±ÜÃâ¶à´Î¼ÓÔØ,Ìá¸ßÐ§ÂÊ
+		// ï¿½ï¿½ï¿½ï¿½2,Ê¹ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½Ê½ï¿½ï¿½ï¿½ï¿½beans.xml,ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Í¼ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ð§ï¿½ï¿½
 		// ApplicationContext applicationContext = (ApplicationContext)
 		// this.getServletContext().getAttribute("SpringApplicationContext");
 
-		// ·½·¨3,Ê¹ÓÃspring×Ô´øµÄ¼àÌýÆ÷È¥¼ÓÔØbeans.xml
+		// ï¿½ï¿½ï¿½ï¿½3,Ê¹ï¿½ï¿½springï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½beans.xml
 		// ApplicationContext applicationContext = (ApplicationContext)
 		// this.getServletContext().getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);
-		// Ê¹ÓÃwebapplicationcontextutilsÕâ¸ö¹¤¾ßÀà¿ÉÒÔºÜ·½±ãµÄ»ñÈ¡ApplicationContext,Ö»ÐèÒª´«ÈëservletContext
+		// Ê¹ï¿½ï¿½webapplicationcontextutilsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÔºÜ·ï¿½ï¿½ï¿½Ä»ï¿½È¡ApplicationContext,Ö»ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½servletContext
 		ApplicationContext applicationContext = WebApplicationContextUtils
 				.getRequiredWebApplicationContext(this.getServletContext());
 
@@ -46,9 +44,10 @@ public class HelloServlet extends HttpServlet {
 		// resp.setContentType("text/html;charset=utf-8");
 		// resp.getWriter().write("<h2>" + sayHi + "</h2>");
 
-		userService = (UserService) applicationContext.getBean("userService");
-		List<User> lstUsers = userService.getAllUser();
-		req.setAttribute("lstUsers", lstUsers);
+		// userService = (TestService)
+		// applicationContext.getBean("userService");
+		// List<User> lstUsers = userService.getAllUser();
+		// req.setAttribute("lstUsers", lstUsers);
 		req.getRequestDispatcher("/index.jsp").forward(req, resp);
 	}
 }
